@@ -47,3 +47,28 @@ Body.js
 
      },[]);
 
+
+Loading and Mounting , rendered are the same thing :- showing component onto the webpage.
+
+
+  1.Chunking
+  2.Code Splitting
+  3.Dynamic Bundling
+  4.Lazy Loading
+  5.On demand Loading
+  6.Dynamic Import
+  **All are same**
+  -When we load our app our home page is load but our grocery app will not load it will only load when we will click on the grocery link.
+  This is known as lazy loading.
+
+  How this will be done ?
+  -Our bundler parcel bundles our whole code and send it to the browser but when we are making large scale project like, our this project we have our res app, and inside that we have our another whole grocery app , therefore it is not good that we should bind our whole code together therefore we will bundled our app differently.
+  **Therefore initially when we will load our sitw it will have only res ocde and does not have grocery code and when we will click out grocery link then we will have our grocery code.**
+
+We donot import directly to our App.js this grocery 
+we will import using lazy function:-
+const Grocery = lazy(() => import("./components/Grocery"));
+
+and there is a little  time between we click the grocery link and this grocery component will load  so meanwhile this will show error therefore we use suspense with fallback .
+   
+ element: <Suspense fallback={<h1>Loading......</h1>}><Grocery /></Suspense>,

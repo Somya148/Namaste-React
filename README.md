@@ -72,3 +72,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 and there is a little  time between we click the grocery link and this grocery component will load  so meanwhile this will show error therefore we use suspense with fallback .
    
  element: <Suspense fallback={<h1>Loading......</h1>}><Grocery /></Suspense>,
+
+
+ //Higher Order component is a Function taht takes a component and returns a component. 
+      It takes a component , enhoances that conponent and then returns back a new enhanced component.
